@@ -1,0 +1,26 @@
+
+[main]
+A = 1
+B = 2
+C = 3
+
+[general]
+unitid    = RShake
+dbraw     = shake
+dbresults = healthresult
+dbstatus  = status
+
+[localdb]
+lip   = 127.0.0.1
+luser = Jose
+lpass = sensorweb
+
+[remotedb]
+rip   = 172.22.114.64
+ruser = Jose
+rpass = sensorweb
+
+[system]
+memory = 60
+cpu    = 90
+disk   = 10

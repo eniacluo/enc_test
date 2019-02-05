@@ -1,0 +1,52 @@
+[main]
+
+#Parameters for OnBed Component
+#seconds
+onBedTimeWindow = 5
+lowCut  = 0.7 
+highCut = 8
+order   = 4
+onBedThreshold = 10000
+timeCheckingOnBed = 2
+
+#Parameters for Movement
+#seconds
+movementTimeWindow = 1
+timeCheckingMovement = 1
+movementThreshold  = 400000
+
+#Parameters Hearth Rate
+#seconds
+hrTimeWindow = 30
+timeCheckingHR = 1
+
+
+#Parameters for Posture Change
+#seconds
+postureChangeTimeWindow = 5
+
+[general]
+unitid    = RShake
+dbraw     = shake
+dbresults = healthresult
+dbstatus  = status
+
+#seconds
+buffersize   = 30
+samplingrate = 100
+
+[localdb]
+lip   = 127.0.0.1
+luser = Jose
+lpass = sensorweb
+
+[remotedb]
+rip   = 10.42.0.1
+ruser = Jose
+rpass = sensorweb
+
+[system]
+memory = 150
+cpu    = 150
+disk   = 90
+daystoremove = 0.1
