@@ -3,23 +3,22 @@
 import subprocess
 import sys
 
-if len(sys.argv) < 2:
-    print "password needed."
-    exit(1)
-    
+key = 'sensorweb987'
+
 serial = subprocess.check_output('cat /proc/cpuinfo | grep Serial | awk \'{print($3)}\'', shell=True)[:-1]
 
 try:
-    cmp_serial = subprocess.check_output('openssl enc -d -a -aes-256-cbc -pass pass:%s -in key' % (sys.argv[1]), shell=True).split('\n')[0]
+    cmp_serial = subprocess.check_output('openssl enc -d -a -aes-256-cbc -pass pass:%s -in key 2>/dev/null' % (key), shell=True).split('\n')[0]
 except:
     print 'Permission denied.'
-    exit(0) 
+    sys.exit() 
 
 if serial == cmp_serial:
+    print "Validate successful!"
     try:
-        import _main ### <-- this is the entry point of our code
+        # the entry point of our code
+        import _main 
     except:
         print 'main module missing.'
-    pass
 else:
     print 'Permission denied.'
