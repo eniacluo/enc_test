@@ -2,7 +2,7 @@
 
 ## Tutorial
 
-Run ./pycompile.sh <path> <entryfile>
+Run ./pycompile.sh \<path\> \<entryfile\>
 
 ## Example
 
